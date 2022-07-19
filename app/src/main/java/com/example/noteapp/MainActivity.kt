@@ -53,8 +53,10 @@ class MainActivity : AppCompatActivity(), NoteRVAdapter.NoteClickInterface, Note
             // adding a click listener for fab button
             // and opening a new intent to add a new note.
             val intent = Intent(this@MainActivity, AddEditActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
-            this.finish()
+
+
         }
 
     }

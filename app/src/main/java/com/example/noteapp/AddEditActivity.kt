@@ -15,7 +15,6 @@ class AddEditActivity : AppCompatActivity() {
     lateinit var noteTitleEdt: EditText
     lateinit var noteEdt: EditText
     lateinit var saveBtn: Button
-
     lateinit var viewModal: NoteViewModal
     var noteID = -1;
 
@@ -52,8 +51,10 @@ class AddEditActivity : AppCompatActivity() {
             // title and desc from edit text.
             val noteTitle = noteTitleEdt.text.toString()
             val noteDescription = noteEdt.text.toString()
+
             // on below line we are checking the type
             // and then saving or updating the data.
+
             if (noteType.equals("Edit")) {
                 if (noteTitle.isNotEmpty() && noteDescription.isNotEmpty()) {
                     val sdf = SimpleDateFormat("dd MMM, yyyy - HH:mm")
@@ -74,6 +75,10 @@ class AddEditActivity : AppCompatActivity() {
                 }
             }
             // opening the new activity on below line
+//            val intent = Intent(this, MainActivity::class.java)
+//            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+//            startActivity(intent)
+
             startActivity(Intent(applicationContext, MainActivity::class.java))
             this.finish()
         }

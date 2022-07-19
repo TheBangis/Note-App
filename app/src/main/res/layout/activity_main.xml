@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#E1F4F3EE"
+    android:background="#e6e6e6"
     tools:context=".MainActivity">
 
     <TextView
@@ -19,11 +19,34 @@
         android:textColor="@color/black"
         android:textSize="30sp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/txNote"
+        android:id="@+id/idLayout"
+        android:layout_margin="5dp">
+
+
+        <SearchView
+            android:id="@+id/txtSearch"
+            android:background="@drawable/border_style"
+            android:queryHint="Search notes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:focusable="true"
+            android:iconifiedByDefault="false"/>
+
+    </LinearLayout>
+
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/notesRV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txNote"
+        android:layout_below="@id/idLayout"
         android:layout_marginTop="5dp"
         tools:listitem="@layout/list_note_holder" />
 
@@ -40,7 +63,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:src="@drawable/ic_add"
-        app:backgroundTint="#1A38E3"
+        app:backgroundTint="#427dde"
         app:tint="@color/white" />
 
 </RelativeLayout>
